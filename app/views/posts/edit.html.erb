@@ -1,0 +1,59 @@
+<%= link_to 'Back', posts_path, class: 'btn btn-secondary', style: 'margin-bottom:50px' %>
+
+
+<div class='row'>
+    <div class= 'col'>
+        <div class='card'>
+            <div class='card-body'>
+            <h4 class='card-title'> Editing Post</h4>
+                                        
+                        <%= form_with(model: @post) do |form| %>
+                        
+                        <style>
+                        .field{
+                            margin-top: 30px  
+                            }
+                        </style>
+                        <div class="field">
+                            <%= form.label :title %>
+                            <%= form.text_field :title, class:'form-control' %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :author %>
+                            <%= form.text_field :author , class:'form-control'%>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :image_url %>
+                            <%= form.text_field :image_url , class:'form-control'%>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :published %>
+                            <%= form.check_box :published %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :content %>
+                            <%= form.text_area :content , class:'form-control'%>
+                        </div>
+
+                        <div class="actions" style='margin-top: 20px'>
+                            <%= form.submit  class:'btn btn-primary'%>
+                        </div>
+                        
+
+                        
+                        <% end %>
+                <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-primary' , style: 'float: right' %>
+
+
+                <%= link_to 'Show', @post , class: 'btn btn-primary', style: 'margin-top: 20px' %>    
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
